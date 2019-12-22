@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   likeGlyphEls = document.querySelectorAll('span.like-glyph').forEach(function(likeGlyph) {
     likeGlyph.addEventListener('click', likeCallback)
   })
-
 })
 
 function likeCallback(event) {
@@ -29,18 +28,8 @@ function likeCallback(event) {
     hiddenEl.classList.remove('hidden')
     let errorEl = document.querySelector('p#modal-message')
     errorEl.innerText = error
-    // debugger
   })
 }
-
-function throwError(error) {
-  let hiddenEl = document.querySelector('#modal')
-  hiddenEl.classList.remove('hidden')
-  let errorEl = document.querySelector('p#modal-message')
-  errorEl.innerText = error
-  debugger
-}
-
 
 //------------------------------------------------------------------------------
 // Ignore after this point. Used only for demo purposes
