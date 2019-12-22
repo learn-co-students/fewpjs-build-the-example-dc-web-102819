@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       if (e.target.classList.contains('like-glyph')) {
         console.log('Article ID: ' + e.target.parentElement.parentElement.parentElement.parentElement.id)
         let spanToChange = e.target
-        // debugger
         mimicServerCall()
         .then(() => changeHeart(spanToChange))
         .catch(()=> showErrorModal())
@@ -63,8 +62,6 @@ function changeHeart(heartToChange) {
 //------------------------------------------------------------------------------
 
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
-  console.log('Im here');
-  // debugger
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
       let isRandomFailure = Math.random() < .2
