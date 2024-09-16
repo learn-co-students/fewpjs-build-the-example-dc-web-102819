@@ -2,9 +2,18 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-// Your JavaScript code goes here!
+let hearts = document.getElementsByClassName('like-glyph')
+for (let heart of hearts){
+  heart.addEventListener('click', likeButton)
+}
 
-
+function likeButton(event){
+  let heart = event.target
+  let mimic = mimicServerCall()
+  mimic.then(success => heart.innerText = FULL_HEART, heart.classList.add('activated-heart'))
+  .catch(error => document.getElementById('modal').classList.remove('hidden'))
+  setTimeout(function(){document.getElementById('modal').classList.add('hidden')}, 5000)
+}
 
 
 //------------------------------------------------------------------------------
